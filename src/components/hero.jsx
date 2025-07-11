@@ -4,7 +4,7 @@ import objetoFlutuante from "../assets/objeto-hero.png";
 export default function Hero() {
     return (
       <section className="bg-[#100F10] relative overflow-hidden min-h-screen flex justify-center items-center">
-        <div className="container mx-auto py-16 px-4">
+        <div className="container mx-auto ">
             <article className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
                 <div className="max-w-5xl mx-auto px-6 py-20 ">
                     <h1 className="text-5xl md:text-7xl font-medium text-slate-200 leading-tight">
@@ -32,7 +32,8 @@ export default function Hero() {
             </article>
             
         </div>
-
+        
+        <div className="absolute top-50 right-40 w-96 h-96 z-20 bg-purple-900/40 rounded-full blur-3xl"></div>
       </section>
     );
 }

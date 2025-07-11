@@ -17,7 +17,7 @@ export default function Portfolio() {
                     <h1 className="text-base text-purple-600 font-mono">// MELHORES PROJETOS</h1>
                 </div> 
 
-                <div className="container gap-8 grid grid-cols-2 md:grid-cols-2">
+                <div className="container gap-8 grid grid-cols-1 md:grid-cols-2">
                     {projects.map((project, index) => (
                         <div key={index} className="bg-transparent border w-full h-56-center border-gray-800 rounded-3xl p-6    transition-all duration-300 hover:border-purple-500 hover:bg-gradient-to-b from-gray-900/30 to-[#100F10]">
                             

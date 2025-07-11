@@ -7,7 +7,7 @@ export default function CallToFuntionc(){
                 </h1>
                 <p className=" text-base text-slate-200">Nos conte o que você tem em mente, nós cuidamos da parte técnica e entregamos com qualidade.</p>
                 <button className="w-68 h-20 mt-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-400 text-[20px] text-[#E7F2E9]">
-                    Solicitar orçamento
+                    <a href="https://form.typeform.com/to/huLDFA0N">Solicitar orçamento</a>
                 </button>
             </div>
         </section>
