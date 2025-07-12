@@ -3,7 +3,7 @@ import Logo from '../assets/THEGOAT.png';
 
 export default function Header() {
     return (
-      <header className="bg-transparent fixed top-0 left-0 z-10 flex justify-evenly items-center w-full h-16 px-6 border-b border-black backdrop-blur-md">
+      <header className="bg-transparent fixed top-0 left-0 z-20 flex justify-evenly items-center w-full h-16 px-6 border-b border-black backdrop-blur-md ">
         <Image 
         src={Logo}
         alt='logotipo'
