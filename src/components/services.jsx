@@ -33,7 +33,7 @@ export default function Services() {
     ];
   
     return(
-        <section className="bg-[#100F10] relative overflow-hidden min-h-screen flex justify-center items-center py-16">
+        <section id="servicos" className="bg-[#100F10] relative overflow-hidden min-h-screen flex justify-center items-center py-16 -z-0">
             <div className="container mx-auto px-4">
                 <div className="text-left mb-20">
                     <h2 className="text-base text-purple-600 font-mono">// NOSSOS SERVIÇOS</h2>

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Goat from "../assets/bodeAbout.png";
+import Conexoes from "../assets/conexoes.png";
 
 export default function About() {
   return (
-    <section className="bg-[#100F10] relative overflow-hidden min-h-screen flex items-center">
+    <section id="about" className="bg-[#100F10] relative overflow-hidden min-h-screen flex items-center">
         
         <div className="container mx-auto">
             
@@ -12,7 +12,7 @@ export default function About() {
                 <div className="hidden md:block z-10">
                     
                     <Image
-                    src={Goat}
+                    src={Conexoes}
                     alt="Bode estiloso com óculos"
                     className="object-contain w-5xl z-10"
                     priority
@@ -20,9 +20,9 @@ export default function About() {
                 </div>
 
                 {/* Texto de apresentação */}
-                <div className="w-full text-white space-y-6 z-10">
+                <div className="w-full md:px-6 text-white space-y-6 z-10 px-4">
                     <h2 className="h-0 text-base text-purple-600 font-mono">// SOBRE NÓS</h2>
-                    <h1 className="text-3xl lg:text-4xl font-bold leading-tight text-white">
+                    <h1 className="text-3xl lg:text-4xl font-bold leading-tight text-white ">
                     Na <span className="text-purple-500">The GOAT</span>, acreditamos que ser o "maior de todos os tempos" vai além de entregar resultados.
                     </h1>
 
@@ -37,9 +37,8 @@ export default function About() {
             </article>
         </div>
 
-        <Image/>
         <div className="absolute top-20 -right-20 w-96 h-96 z-0 bg-purple-900/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 -left-20 w-80 h-80 Z-0 bg-purple-700/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 -left-20 w-80 h-80 z-0 bg-purple-700/30 rounded-full blur-3xl"></div>
     </section>
   );
 }

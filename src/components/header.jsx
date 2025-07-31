@@ -1,26 +1,52 @@
+"use client"
+
 import Image from 'next/image';
 import Logo from '../assets/THEGOAT.png';
+import {useState} from 'react';
 
-export default function Header() {
-    return (
-      <header className="bg-transparent fixed top-0 left-0 z-20 flex justify-evenly items-center w-full h-16 px-6 border-b border-black backdrop-blur-md ">
-        <Image 
-        src={Logo}
-        alt='logotipo'
-        className='object-contain w-32 h-auto'
-        />
-  
-        <nav>
-          <ul className="flex gap-6">
-            <li><a href="#inicio" className="text-[#E7F2E9] hover:underline font-light">Início</a></li>
-            <li><a href="#sobre" className="text-[#E7F2E9] hover:underline font-light">Sobre</a></li>
-            <li><a href="#servicos" className="text-[#E7F2E9] hover:underline font-light">Serviços</a></li>
-            <li><a href="#portfolio" className="text-[#E7F2E9] hover:underline font-light">Portfólio</a></li>
-          </ul>
-        </nav>
-  
-        <button className="w-24 h-10 rounded-md bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">Contato</button>
-      </header>
-    );
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const menuItems = [
+    {nome: 'Inicio', href: '#inicio'},
+    {nome: 'Sobre', href: '#about'},
+    {nome: 'Serviços', href: '#servicos'},
+    {nome: 'Portfólio', href: '#portfolio'},
+  ]
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth'});
+      setIsMenuOpen(false);
+    }
   }
+  return (
+    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16 px-6 border-b border-black backdrop-blur-md ">
+      <Image 
+      src={Logo}
+      alt='logotipo'
+      className='object-contain w-32 h-auto'
+      />
+
+      <nav className='hidden md:flex items-center space-x-8'>
+        {menuItems.map((item) => (
+          <button
+          key={item.nome}
+          onClick={() => scrollToSection(item.href)}
+          className='text-sm text-[#E7F2E9] hover:underline font-light'
+          >
+            {item.nome}
+          </button>
+        ))}
+
+        <button className="w-24 h-10 rounded-md bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">Contato</button>
+      </nav>
+
+      
+    </header>
+  );
+}
+
+export default Header;
   
