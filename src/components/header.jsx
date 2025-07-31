@@ -34,13 +34,13 @@ const Header = () => {
           <button
           key={item.nome}
           onClick={() => scrollToSection(item.href)}
-          className='text-sm text-[#E7F2E9] hover:underline font-light'
+          className=' pointer text-sm text-[#E7F2E9] hover:underline font-light'
           >
             {item.nome}
           </button>
         ))}
 
-        <button className="w-24 h-10 rounded-md bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">Contato</button>
+        <button onClick={() => scrollToSection("#cta")} className=" pointer w-24 h-10 rounded-md bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">Contato</button>
       </nav>
 
       

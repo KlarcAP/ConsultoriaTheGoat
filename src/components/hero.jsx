@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import objetoFlutuante from "../assets/objeto-hero.png";
-import reuniao from "../assets/reuniao.png";
+import Glass from "../assets/glass.png";
 
 export default function Hero() {
     return (
       <section id="inicio" 
-      className="bg-[url(../assets/annie-spratt-hCb3lIB8L8E-unsplash.jpg)] bg-cover bg-center relative overflow-hidden min-h-screen flex justify-center items-center"
+      className="bg-[#100F10] object-contain relative overflow-hidden min-h-screen flex justify-center items-center"
       >
+        <Image 
+        src={Glass}
+        alt='glass'
+        className='absolute z-0'
+        />
         <div className="container mx-auto z-20">
             <article className='grid grid-cols-1 lg:grid-cols-1 gap-8 items-center text-center'>
                 <div className="max-w-5xl mx-auto px-6 py-20">
@@ -33,7 +38,7 @@ export default function Hero() {
             </article>
             
         </div>
-    
+        
       </section>
     );
 }
