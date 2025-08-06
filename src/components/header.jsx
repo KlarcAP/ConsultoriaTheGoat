@@ -8,10 +8,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
-    {nome: 'Inicio', href: '#inicio'},
-    {nome: 'Sobre', href: '#about'},
-    {nome: 'Serviços', href: '#servicos'},
-    {nome: 'Portfólio', href: '#portfolio'},
+    {nome: 'INICIO', href: '#inicio'},
+    {nome: 'SOBRE', href: '#about'},
+    {nome: 'SERVIÇOS', href: '#servicos'},
+    {nome: 'PORTFÓLIO', href: '#portfolio'},
+    {nome: 'BLOG', href: '#portfolio'},
   ]
 
   const scrollToSection = (href) => {
@@ -22,26 +23,27 @@ const Header = () => {
     }
   }
   return (
-    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16 px-6 border-b border-black backdrop-blur-md ">
+    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16 px-6   ">
       <Image 
       src={Logo}
       alt='logotipo'
       className='object-contain w-32 h-auto'
       />
 
-      <nav className='hidden md:flex items-center space-x-8'>
+      <nav className='border border-white w-auto rounded-full h-auto justify-evenly hidden md:flex items-center space-x-8 backdrop-blur-md'>
         {menuItems.map((item) => (
           <button
           key={item.nome}
           onClick={() => scrollToSection(item.href)}
-          className=' pointer text-sm text-[#E7F2E9] hover:underline font-light'
+          className=' pointer text-sm text-[#E7F2E9] mx-4 my-2 hover:underline font-light'
           >
             {item.nome}
           </button>
         ))}
 
-        <button onClick={() => scrollToSection("#cta")} className=" pointer w-24 h-10 rounded-md bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">Contato</button>
       </nav>
+
+      <button onClick={() => scrollToSection("#cta")} className=" pointer text-sm w-24 h-10 rounded-full bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">CONTATO</button>
 
       
     </header>
