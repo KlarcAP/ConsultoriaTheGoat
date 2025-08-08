@@ -2,6 +2,7 @@ import Image from "next/image";
 import Conexoes from "../assets/conexoes.png";
 
 export default function About() {
+
   return (
     <section id="about" className="bg-[#ebebeb] relative overflow-hidden min-h-screen flex items-center">
         
@@ -14,7 +15,7 @@ export default function About() {
                 <div className="w-3/3 justify-center md:px-6 text-white space-y-6 z-10 px-4">
                     
                     <h1 className="text-xl text-center font-roboto-condensed lg:text-5xl font-bold leading-tight text-black ">
-                        Na <span className="text-purple-500">The GOAT</span>, ser o “maior de todos os tempos” é ir além dos números. É inspirar, conectar e transformar marcas em histórias de sucesso duradouras, criando valor que se multiplica e deixa um legado.
+                        Na <span className="text-purple-500">The GOAT</span>, ser o “maior de todos os tempos” é ir além dos números. É inspirar, conectar e transformar <span className="text-purple-500">marcas</span> em histórias de <span className="text-purple-500">sucesso duradouras</span>, criando <span className="text-purple-500">valor</span> que se multiplica e deixa um <span className="text-purple-500">legado</span>.
                     </h1>
 
                     

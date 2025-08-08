@@ -6,8 +6,14 @@
   --foreground: #171717;
 }
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @theme {
   --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  
 }
 
 @media (prefers-color-scheme: dark) {

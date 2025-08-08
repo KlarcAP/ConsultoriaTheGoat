@@ -36,7 +36,9 @@ export default function Services() {
           <Image
             src={blacksmoke}
             alt='black-smoke'
-            className='object-cover inset brightness-50 absolute z-0'
+            fill
+            priority
+            className='object-cover inset-0 absolute brightness-50 z-0'
           />
           <div className="container mx-auto z-20 px-4">
                 <div className="text-left mb-20">
@@ -55,7 +57,7 @@ export default function Services() {
                         <div className="flex items-center mr-15">
                         
                             <ul>
-                              <li className="text-7xl font-extrabold text-white hover:text-black">{service.title}</li>
+                              <li className="text-5xl lg:text-7xl font-extrabold text-white hover:text-black">{service.title}</li>
                             </ul>
                         </div>
                         
