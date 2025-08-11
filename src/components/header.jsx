@@ -23,7 +23,7 @@ const Header = () => {
     }
   }
   return (
-    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16 px-6   ">
+    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16    ">
       <Image 
       src={Logo}
       alt='logotipo'
