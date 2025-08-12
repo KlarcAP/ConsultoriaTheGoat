@@ -8,28 +8,23 @@ import Image from "next/image";
 const projects = [
     {
         capa: laptop,
-        title: "Site Institucional – Dr. Eládio Vitório (Advogado Criminalista)",
-        tags: "",
+        title: "Beconnect",
+        tags: ["Sistema", "Desenvolvimento Web"],
     },
     {
         capa: teennager,
-        title: "Beconect",
-        tags: "",
+        title: "PetWalk",
+        tags: ["Desenvolvimento Mobile", "App", "UI/UX"],
     },
     {
         capa: placa,
         title: "Risoflow",
-        tags: "",
+        tags: [],
     },
     {
         capa: giftcard,
         title: "Risoflow",
-        tags: "",
-    },
-    {
-        capa: ecobag,
-        title: "Risoflow",
-        tags: "",
+        tags: [],
     },
 ]
 
@@ -39,7 +34,7 @@ export default function Portfolio() {
             <div className="container mx-auto px-4">
             
                 <div className="text-center mb-20">
-                    <h1 className="text-base text-purple-600 font-mono">// MELHORES PROJETOS</h1>
+                    <h1 className="text-md text-purple-600 font-mono">MELHORES PROJETOS</h1>
                 </div> 
 
                 <div className="container gap-8 grid grid-cols-1 md:grid-cols-2">
@@ -56,6 +51,19 @@ z
                             <div className="flex items-center mr-15">
                                 <h3 className="text-xl font-bold mt-5 text-black">{project.title}</h3>
                             </div>
+
+                            {project.tags.length > 0 && (
+                                <div className="flex flex-wrap gap-2 mt-3">
+                                    {project.tags.map((tag, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="bg-purple-100 border border-black text-purple-700 text-sm font-medium px-3 py-1 rounded-full"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                             
                         </div>
                     ))}
