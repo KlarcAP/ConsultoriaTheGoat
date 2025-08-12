@@ -47,7 +47,7 @@ export default function Portfolio() {
                                 className="object-contain rounded-2xl z-10"
                                 priority
                             />
-z
+
                             <div className="flex items-center mr-15">
                                 <h3 className="text-xl font-bold mt-5 text-black">{project.title}</h3>
                             </div>
