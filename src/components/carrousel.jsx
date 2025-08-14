@@ -1,91 +1,78 @@
-"use client"; // Garante execução no lado do cliente no Next.js
-
+"use client";
 import { useEffect, useRef } from "react";
 
-export default function Carrrosel() {
-
-    const carouselRef = useRef(null);
+export default function Carrossel() {
+  const carouselRef1 = useRef(null);
+  const carouselRef2 = useRef(null);
 
   useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
+    function createCarousel(carousel, speed) {
+      if (!carousel) return;
+      let position = 0;
+      let animationFrame;
 
-    let position = 0;
-    let speed = 0.5;
-    let animationFrame;
-
-    function scrollCarousel() {
-      position -= speed;
-      if (Math.abs(position) >= carousel.scrollWidth / 2) {
-        position = 0;
+      function scrollCarousel() {
+        position += speed; // positivo → direita | negativo → esquerda
+        if (Math.abs(position) >= carousel.scrollWidth / 2) {
+          position = 0;
+        }
+        carousel.style.transform = `translateX(${position}px)`;
+        animationFrame = requestAnimationFrame(scrollCarousel);
       }
-      carousel.style.transform = `translateX(${position}px)`;
-      animationFrame = requestAnimationFrame(scrollCarousel);
+
+      scrollCarousel();
+
+      carousel.addEventListener("mouseenter", () => {
+        cancelAnimationFrame(animationFrame);
+      });
+
+      carousel.addEventListener("mouseleave", () => {
+        scrollCarousel();
+      });
     }
 
-    // Inicia o movimento
-    scrollCarousel();
+    createCarousel(carouselRef1.current, -0.5); // Esquerda
+    createCarousel(carouselRef2.current, 0.5);  // Direita
+  }, []);
 
-    // Pausa ao passar o mouse
-    carousel.addEventListener("mouseenter", () => {
-      cancelAnimationFrame(animationFrame);
-    });
+  const items = [
+    "Desenvolvimento Web",
+    "Branding",
+    "Design",
+    "UX/UI",
+    "Marketing",
+    "SEO",
+    "E-commerce",
+    "Social Media",
+  ];
 
-    // Retoma quando o mouse sai
-    carousel.addEventListener("mouseleave", () => {
-      scrollCarousel();
-    });
+  const renderItems = () => (
+    <>
+      {items.map((text, i) => (
+        <span
+          key={i}
+          className="mx-8 text-6xl font-semibold text-purple-700"
+        >
+          {text}
+        </span>
+      ))}
+      {items.map((text, i) => (
+        <span
+          key={i + "repeat"}
+          className="mx-8 text-6xl font-semibold text-purple-700"
+        >
+          {text}
+        </span>
+      ))}
+    </>
+  );
 
-    // Cleanup quando o componente desmontar
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-    }, []);
-
-    return(
-      <div className="w-full bg-[#ebebeb]  overflow-hidden">
-        <div ref={carouselRef} id="carousel" className="flex whitespace-nowrap h-auto">
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Desenvolvimento Web
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Branding
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Design
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            UX/UI
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Marketing
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">SEO</span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            E-commerce
-          </span>
-
-          {/* Repetição para efeito infinito */}
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Desenvolvimento Web
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Branding
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Design
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            UX/UI
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            Marketing
-          </span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">SEO</span>
-          <span className="mx-8 text-6xl font-semibold text-purple-700">
-            E-commerce
-          </span>
-        </div>
+  return (
+    <div className="w-full bg-[#ebebeb] overflow-hidden space-y-4">
+      {/* Carrossel Esquerda */}
+      <div ref={carouselRef1} className="flex whitespace-nowrap h-auto">
+        {renderItems()}
       </div>
-    )
+    </div>
+  );
 }

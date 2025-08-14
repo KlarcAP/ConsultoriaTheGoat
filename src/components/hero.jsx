@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import objetoFlutuante from "../assets/objeto-hero.png";
 import nature from "../assets/jeremy-bishop.jpg";
 
 export default function Hero() {

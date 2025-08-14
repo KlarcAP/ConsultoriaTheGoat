@@ -6,8 +6,8 @@ export default function CallToFuntionc(){
                     Vamos tirar <span className="bg-gradient-to-r from-purple-600 to-blue-400 text-transparent bg-clip-text">sua ideia</span> do papel 🚀
                 </h1>
                 <p className=" text-base text-slate-200">Nos conte o que você tem em mente, nós cuidamos da parte técnica e entregamos com qualidade.</p>
-                <button className="pointer w-68 h-20 mt-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-400 text-[20px] text-[#E7F2E9]">
-                    <a href="https://form.typeform.com/to/huLDFA0N">Solicitar orçamento</a>
+                <button className="pointer w-58 h-10 mt-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-400 text-[20px] text-[#E7F2E9]">
+                    <a href="https://form.typeform.com/to/huLDFA0N">Agendar reunião</a>
                 </button>
             </div>
         </section>
