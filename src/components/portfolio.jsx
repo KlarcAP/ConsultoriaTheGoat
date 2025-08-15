@@ -35,6 +35,7 @@ export default function Portfolio() {
             
                 <div className="text-center mb-20">
                     <h1 className="text-md text-purple-600 font-mono">MELHORES PROJETOS</h1>
+                    <h2 className="text-3xl md:text-4xl font-bold text-black mt-4">Cada projeto, uma nova <span className="text-purple-700">história de sucesso</span></h2>
                 </div> 
 
                 <div className="container gap-8 grid grid-cols-1 md:grid-cols-2">
