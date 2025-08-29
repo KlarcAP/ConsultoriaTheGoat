@@ -5,6 +5,7 @@ import Carrosel from "../components/carrousel";
 import Services from "../components/services";
 import Projects from "../components/portfolio";
 import CallToAction from "../components/callToAction";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <Projects />
       <CallToAction />
+      <Footer />
     </main>
   );
 }
