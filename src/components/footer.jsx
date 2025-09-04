@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 export default function Footer() {
   return (
     <footer className="bg-[#ebebeb] py-12">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-8 px-6">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between content-center items-start gap-8 px-6">
         
         {/* Coluna Esquerda */}
         <div className="flex flex-col w-full md:w-1/2 space-y-4">

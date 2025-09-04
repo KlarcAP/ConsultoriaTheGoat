@@ -45,8 +45,10 @@ export default function Portfolio() {
                             <Image 
                                 src={project.capa}
                                 alt="imagem do projeto"
-                                className="object-contain rounded-2xl z-10"
-                                priority
+                                width={600}
+                                height={400}
+                                placeholder="blur"
+                                className="object-cover rounded-2xl z-10"
                             />
 
                             <div className="flex items-center mr-15">

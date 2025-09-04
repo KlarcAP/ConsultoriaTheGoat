@@ -9,6 +9,7 @@ import { PiPaintBrushBold } from 'react-icons/pi';
 import { HiOutlineVideoCamera } from 'react-icons/hi';
 import { MdCampaign} from "react-icons/md";
 import { FaGoogle} from "react-icons/fa";
+import { SiN8N } from 'react-icons/si';
 
 
 
@@ -42,7 +43,12 @@ export default function Services() {
     { 
       icone: <FaGoogle/>,
       title: "TRÁFEGO PAGO", 
-      description: "Alcance as pessoas certas, no momento certo. Criamos e gerenciamos campanhas estratégicas no Google, Meta Ads e outras plataformas, otimizando cada investimento para gerar cliques qualificados, conversões reais e retorno consistente sobre o seu orçamento.", 
+      description: "Criamos e gerenciamos campanhas inteligentes no Google, Meta Ads e outras plataformas digitais. Nosso foco é otimizar cada investimento para atrair visitantes qualificados, gerar conversões reais e garantir um retorno consistente para o seu negócio.", 
+    },
+    { 
+      icone: <SiN8N/>,
+      title: "Automação com n8n", 
+      description: "Transforme tarefas manuais em processos automáticos e inteligentes. Conectamos ferramentas como WhatsApp, e-mail, planilhas e sistemas de gestão para que tudo trabalhe de forma integrada. ", 
     },
   ];
 

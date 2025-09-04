@@ -26,6 +26,7 @@ const Header = () => {
     <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16    ">
       <Image 
       src={Logo}
+      priority
       alt='logotipo'
       className='object-contain w-32 h-auto'
       />
