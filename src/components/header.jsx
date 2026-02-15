@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import Logo from '../assets/THEGOAT.png';
+import Logo from '../components/logo';
 import {useState} from 'react';
 
 const Header = () => {
@@ -12,7 +12,6 @@ const Header = () => {
     {nome: 'SOBRE', href: '#about'},
     {nome: 'SERVIÇOS', href: '#servicos'},
     {nome: 'PORTFÓLIO', href: '#portfolio'},
-    {nome: 'BLOG', href: '#portfolio'},
   ]
 
   const scrollToSection = (href) => {
@@ -23,31 +22,33 @@ const Header = () => {
     }
   }
   return (
-    <header className="bg-transparent fixed top-0 left-0 z-30 flex justify-between items-center w-full h-16    ">
-      <Image 
-      src={Logo}
-      priority
-      alt='logotipo'
-      className='object-contain w-32 h-auto'
-      />
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-neutral-200">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-      <nav className='border border-white w-auto rounded-full h-auto justify-evenly hidden md:flex items-center space-x-8 backdrop-blur-md'>
-        {menuItems.map((item) => (
-          <button
-          key={item.nome}
-          onClick={() => scrollToSection(item.href)}
-          className=' pointer text-sm text-[#E7F2E9] mx-4 my-2 hover:underline font-light'
-          >
-            {item.nome}
-          </button>
-        ))}
+        <Logo />
 
-      </nav>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-700">
+          {menuItems.map((item) => (
+            <button
+              key={item.nome}
+              onClick={() => scrollToSection(item.href)}
+              className="hover:text-black transition-colors"
+            >
+              {item.nome}
+            </button>
+          ))}
+        </nav>
 
-      <button onClick={() => scrollToSection("#cta")} className=" pointer text-sm w-24 h-10 rounded-full bg-gradient-to-r from-purple-600 to-blue-400 text-[#E7F2E9]">CONTATO</button>
+        <button
+          onClick={() => scrollToSection("#cta")}
+          className=" bg-violet-600 hover:bg-violet-700 hidden md:inline-flex items-center px-5 py-2.5 text-white text-sm font-semibold rounded-lg transition"
+        >
+          Agendar conversa
+        </button>
 
-      
+      </div>
     </header>
+
   );
 }
 

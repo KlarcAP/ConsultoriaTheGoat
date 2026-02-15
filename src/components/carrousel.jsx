@@ -68,7 +68,7 @@ export default function Carrossel() {
   );
 
   return (
-    <div className="w-full bg-[#ebebeb] overflow-hidden space-y-4">
+    <div className="w-full bg-[#ebebeb] overflow-hidden space-y-4 -rotate-z-6">
       {/* Carrossel Esquerda */}
       <div ref={carouselRef1} className="flex whitespace-nowrap h-auto">
         {renderItems()}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -12,9 +12,9 @@
 }
 
 @theme {
-  --font-roboto-condensed: "Roboto Condensed", sans-serif;
-  
+  --font-sans: "Sora", sans-serif;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -32,7 +32,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

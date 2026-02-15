@@ -4,101 +4,114 @@ import teennager from "../assets/teenager-outdoors-using-smartphone.jpg";
 import laptop from "../assets/close-up-hands-holding-laptop.jpg";
 import placa from "../assets/placa.jpg";
 import giftcard from "../assets/gift-card.jpg";
-import ecobag from "../assets/ecobag.jpg"
 import Image from "next/image";
 import { motion } from "motion/react";
 
 const projects = [
-    {
-        capa: laptop,
-        title: "Beconnect",
-        tags: ["Sistema", "Desenvolvimento Web"],
-    },
-    {
-        capa: teennager,
-        title: "PetWalk",
-        tags: ["Desenvolvimento Mobile", "App", "UI/UX"],
-    },
-    {
-        capa: placa,
-        title: "Risoflow",
-        tags: [],
-    },
-    {
-        capa: giftcard,
-        title: "Risoflow",
-        tags: [],
-    },
-]
+  {
+    capa: laptop,
+    title: "Beconnect",
+    niche: "SaaS B2B",
+    challenge: "Baixa conversão e posicionamento genérico no mercado.",
+    strategy: "Reposicionamento estratégico + arquitetura focada em geração de leads.",
+    impact: "Aumento na taxa de conversão e clareza de proposta de valor.",
+  },
+  {
+    capa: teennager,
+    title: "PetWalk",
+    niche: "Startup Mobile",
+    challenge: "Produto validado, mas sem estrutura digital consistente.",
+    strategy: "Definição de proposta de valor + UX orientada à ativação.",
+    impact: "Melhora na retenção e experiência inicial do usuário.",
+  },
+  {
+    capa: placa,
+    title: "Risoflow",
+    niche: "Marca Local",
+    challenge: "Presença digital fraca e comunicação inconsistente.",
+    strategy: "Construção de identidade + site institucional estratégico.",
+    impact: "Fortalecimento da autoridade e geração de oportunidades.",
+  },
+  {
+    capa: giftcard,
+    title: "Brand X",
+    niche: "Comércio Local",
+    challenge: "Baixa diferenciação no mercado competitivo.",
+    strategy: "Clareza de posicionamento + experiência digital otimizada.",
+    impact: "Aumento da percepção de valor da marca.",
+  },
+];
 
 export default function Portfolio() {
-    return(
-        <section id="portfolio" className="bg-[#ebebeb] relative overflow-hidden min-h-screen flex justify-center items-center py-16">
-            <div className="container mx-auto px-4">
-            
-                <div className="text-center mb-20">
-                    <h1 className="text-md text-purple-600 font-mono">MELHORES PROJETOS</h1>
-                    <h2 className="text-3xl md:text-4xl font-bold text-black mt-4">Cada projeto, uma nova <span className="text-purple-700">história de sucesso</span></h2>
-                </div> 
+  return (
+    <section
+      id="portfolio"
+      className="bg-white relative min-h-screen flex justify-center items-center py-24"
+    >
+      <div className="container mx-auto px-6">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
-                        <motion.div
-                        key={index}
-                        whileHover={{ scale: 1.025 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="
-                            relative cursor-pointer will-change-transform
-                            transition-shadow duration-200 ease-out
-                            hover:shadow-[0_1.125rem_2.5rem_rgba(0,0,0,0.35)]
-                            rounded-2xl
-                        "
-                        >
-                        <div
-                            className="
-                            absolute inset-0 overflow-hidden
-                            border border-white/30 rounded-2xl
-                            [transform-style:preserve-3d]
-                            [transform-origin:50%_50%]
-                            transition-[transform] duration-150 ease-out
-                            "
-                            style={{
-                            transform:
-                                "perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--s,1))"
-                            }}
-                        />
+        {/* Cabeçalho Estratégico */}
+        <div className="mb-24 max-w-3xl">
+          <p className="text-sm text-purple-600 font-mono">
+            ESTUDOS DE CASO
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mt-4 leading-tight">
+            Projetos desenvolvidos com foco em{" "}
+            <span className="text-purple-700">estratégia, clareza e impacto real</span>.
+          </h2>
+        </div>
 
-                        <div className="relative z-10 p-6">
-                            <Image
-                            src={project.capa}
-                            alt="imagem do projeto"
-                            width={600}
-                            height={400}
-                            placeholder="blur"
-                            className="object-cover rounded-xl"
-                            />
+        {/* Cases */}
+        <div className="flex flex-col gap-16">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.2 }}
+              className="grid md:grid-cols-2 gap-10 items-center"
+            >
+              {/* Imagem */}
+              <div>
+                <Image
+                  src={project.capa}
+                  alt={`Imagem do projeto ${project.title}`}
+                  width={600}
+                  height={400}
+                  placeholder="blur"
+                  className="rounded-2xl object-cover"
+                />
+              </div>
 
-                            <h3 className="text-xl font-bold mt-5 text-black">
-                            {project.title}
-                            </h3>
+              {/* Conteúdo Estratégico */}
+              <div className="space-y-4">
+                <p className="text-sm text-purple-600 font-medium">
+                  {project.niche}
+                </p>
 
-                            {project.tags.length > 0 && (
-                            <div className="flex flex-wrap gap-2 mt-3">
-                                {project.tags.map((tag, idx) => (
-                                <span
-                                    key={idx}
-                                    className="bg-purple-100 border border-black text-purple-700 text-sm font-medium px-3 py-1 rounded-full"
-                                >
-                                    {tag}
-                                </span>
-                                ))}
-                            </div>
-                            )}
-                        </div>
-                        </motion.div>
-                    ))}
+                <h3 className="text-2xl font-bold text-black">
+                  {project.title}
+                </h3>
+
+                <div className="space-y-3 text-gray-700">
+                  <p>
+                    <strong>Desafio:</strong> {project.challenge}
+                  </p>
+                  <p>
+                    <strong>Estratégia:</strong> {project.strategy}
+                  </p>
+                  <p>
+                    <strong>Impacto:</strong> {project.impact}
+                  </p>
                 </div>
-            </div>
-        </section>
-    )
+
+                <button className="mt-4 border border-black px-6 py-2 rounded-full text-sm hover:bg-black hover:text-white transition">
+                  VER ESTUDO COMPLETO →
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
