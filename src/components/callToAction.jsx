@@ -25,7 +25,7 @@ export default function CallToFunction() {
 
         <div className="mt-12">
           <a
-            href="/diagnostico"
+            href="https://wa.me/5511916141235?text=Olá!%20Analisei%20seu%20trabalho%20e%20tenho%20interesse%20em%20passar%20por%20um%20diagnóstico%20estratégico%20para%20avaliar%20oportunidades%20digitais%20no%20meu%20negócio."
             className="inline-flex items-center justify-center rounded-full px-12 py-4 text-lg font-medium bg-gradient-to-r from-purple-600 to-blue-400 text-white hover:opacity-90 transition"
           >
             Solicitar diagnóstico estratégico →

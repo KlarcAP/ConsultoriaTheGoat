@@ -40,7 +40,7 @@ const Header = () => {
         </nav>
 
         <button
-          onClick={() => scrollToSection("#cta")}
+          onClick={() => window.location.href = "https://wa.me/5511916141235?text=Olá!%20Analisei%20seu%20trabalho%20e%20tenho%20interesse%20em%20passar%20por%20um%20diagnóstico%20estratégico%20para%20avaliar%20oportunidades%20digitais%20no%20meu%20negócio."}
           className=" bg-violet-600 hover:bg-violet-700 hidden md:inline-flex items-center px-5 py-2.5 text-white text-sm font-semibold rounded-lg transition"
         >
           Agendar conversa
